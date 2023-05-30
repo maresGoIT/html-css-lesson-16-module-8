@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/main.min.css" />
+
+    <title>HTML/CSS Modulul 8 - Lectia 16</title>
+    <style>
+      .responsive-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <h1 class="heading-primary sticky">Tag-ul &lt;picture&gt;</h1>
+      <article>
+        <p>
+          Elementul HTML <em>&lt;picture&gt;</em> conține zero sau mai multe
+          elemente <em>&lt;source&gt;</em> și un element
+          <em>&lt;img&gt;</em> pentru a oferi versiuni alternative ale unei
+          imagini pentru diferite scenarii de afișare/dispozitiv.
+        </p>
+        <p>
+          Browserul va lua în considerare fiecare element &lt;source&gt; copil
+          și va alege cea mai bună potrivire dintre ele. Dacă nu sunt găsite
+          potriviri – sau browserul nu acceptă elementul &lt;picture&gt; - este
+          selectată adresa URL a atributului src al elementului &lt;img&gt;.
+          Imaginea selectată este apoi prezentată în spațiul ocupat de elementul
+          &lt;img&gt;.
+        </p>
+      </article>
+      <section class="lesson-example">
+        <!--Change the browser window width to see the image change.-->
+        <picture>
+          <source srcset="./surfer-240-200.jpg" media="(min-width: 600px)" />
+          <img src="./painted-hand-298-332.jpg" alt="" />
+        </picture>
+      </section>
+    </main>
+  </body>
+</html>
