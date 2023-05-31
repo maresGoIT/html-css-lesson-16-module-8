@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/main.min.css" />
-    <link rel="stylesheet" href="..//intrebari/style.scss" />
     <title>Intrebari</title>
+    <style>
+      #wrapper {
+        border: 1px solid black;
+        padding: 0;
+      }
+      img {
+        border: 1px solid red;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      /* Imaginea se va comporta ca un text, si va avea o margine in partea de jos (cea care acopera partea de jos
+      pentru literele j,q, etc., egala cu line-height) */
+      img.fixed {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <main class="container example-page"></main>
+    <div id="wrapper">
+      test jq
+      <img src="http://i53.tinypic.com/2ymznmx.jpg" width="60" height="60" />
+    </div>
   </body>
 </html>
