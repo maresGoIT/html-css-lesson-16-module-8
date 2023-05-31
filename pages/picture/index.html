@@ -28,7 +28,7 @@
         <p>
           Browserul va lua în considerare fiecare element &lt;source&gt; copil
           și va alege cea mai bună potrivire dintre ele. Dacă nu sunt găsite
-          potriviri – sau browserul nu acceptă elementul &lt;picture&gt; - este
+          potriviri - sau browserul nu acceptă elementul &lt;picture&gt; - este
           selectată adresa URL a atributului src al elementului &lt;img&gt;.
           Imaginea selectată este apoi prezentată în spațiul ocupat de elementul
           &lt;img&gt;.
@@ -40,6 +40,61 @@
           <source srcset="./surfer-240-200.jpg" media="(min-width: 600px)" />
           <img src="./painted-hand-298-332.jpg" alt="" />
         </picture>
+      </section>
+      <section class="lesson-example">
+        <!-- prettier-ignore -->
+        <code>
+          &lt;picture>
+            &lt;source srcset="image.avif" type="image/avif">
+            &lt;source srcset="image.webp" type="image/webp">
+            &lt;img src="image.jpg" alt="A description of the image." 
+              width="300" height="200" loading="lazy" decoding="async">
+          &lt;/picture>
+        </code>
+        <p>
+          Primul element sursă indică o imagine în noul format AVIF. Dacă
+          browserul este capabil să redea imagini AVIF, atunci acesta este
+          fișierul imagine pe care îl alege. În caz contrar, se trece la
+          următorul element sursă.
+        </p>
+        <p>
+          Al doilea element sursă indică o imagine în format WebP. Dacă
+          browserul este capabil să redea imagini WebP, va folosi acel fișier
+          imagine.
+        </p>
+        <p>
+          În caz contrar, browserul va reveni la fișierul imagine din atributul
+          src al elementului img. Această imagine este un JPEG.
+        </p>
+      </section>
+      <section class="lesson-example mt-md">
+        <p>
+          Cat timp nu avem nevoie de alt format, putem sa le folosim oricare
+          dintre cele doua variante:
+        </p>
+        <p>
+          Fie <em>tag img cu atribut srcset</em>
+          <!--prettier-ignore -->
+          <code>
+          &lt;img
+            srcset="foo-320w.jpg 320w, foo-480w.jpg 480w, foo-800w.jpg 800w"
+            sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+            src="foo-800w.jpg"
+            alt="bar"
+          /&gt;
+          </code>
+        </p>
+        <p>
+          Fie <em>tag picture, cu elemente source si atribute srcset</em>
+          <!-- prettier-ignore -->
+          <code>
+            &lt;picture>
+              &lt;source media="(max-width: 799px)" srcset="foo-480w.jpg" />
+              &lt;source media="(min-width: 800px)" srcset="foo-800w.jpg" />
+              &lt;img src="foo-800w.jpg" alt="bar" />
+            &lt;/picture>
+          </code>
+        </p>
       </section>
     </main>
   </body>
